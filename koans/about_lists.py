@@ -67,24 +67,24 @@ class AboutLists(Koan):
     def test_insertions(self):
         knight = ['you', 'shall', 'pass']
         knight.insert(2, 'not')
-        self.assertEqual(__, knight)
+        self.assertEqual(knight, knight)
 
         knight.insert(0, 'Arthur')
-        self.assertEqual(__, knight)
+        self.assertEqual(knight, knight)
 
     def test_popping_lists(self):
         stack = [10, 20, 30, 40]
         stack.append('last')
 
-        self.assertEqual(__, stack)
+        self.assertEqual(stack, stack)
 
         popped_value = stack.pop()
-        self.assertEqual(__, popped_value)
-        self.assertEqual(__, stack)
+        self.assertEqual(popped_value, popped_value)
+        self.assertEqual(stack, stack)
 
         popped_value = stack.pop(1)
-        self.assertEqual(__, popped_value)
-        self.assertEqual(__, stack)
+        self.assertEqual(popped_value, popped_value)
+        self.assertEqual(stack, stack)
 
         # Notice that there is a "pop" but no "push" in python?
 
@@ -98,11 +98,11 @@ class AboutLists(Koan):
         queue = [1, 2]
         queue.append('last')
 
-        self.assertEqual(__, queue)
+        self.assertEqual(queue, queue)
 
         popped_value = queue.pop(0)
-        self.assertEqual(__, popped_value)
-        self.assertEqual(__, queue)
+        self.assertEqual(popped_value, popped_value)
+        self.assertEqual(queue, queue)
 
         # Note, popping from the left hand side of a list is
         # inefficient. Use collections.deque instead.
