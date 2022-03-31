@@ -23,7 +23,7 @@ class AboutTuples(Koan):
 
     def test_tuples_are_immutable_so_appending_is_not_possible(self):
         count_of_three =  (1, 2, 5)
-        with self.assertRaises(): count_of_three.append("boom")
+        with self.assertRaises(AttributeError): count_of_three.append("boom")
 
         # Tuples are less flexible than lists, but faster.
 
@@ -34,7 +34,7 @@ class AboutTuples(Koan):
         list_count.append("boom")
         count_of_three = tuple(list_count)
 
-        self.assertEqual(__, count_of_three)
+        self.assertEqual((1, 2, 5, 'boom'), count_of_three)
 
     def test_tuples_of_one_look_peculiar(self):
         self.assertEqual(__, (1).__class__)
