@@ -12,7 +12,9 @@ class AboutSets(Koan):
         self.assertEqual({'MacLeod', 'Ramirez', 'Matunas', 'Malcolm'}, there_can_only_be_only_one)
 
     def test_empty_sets_have_different_syntax_to_populated_sets(self):
-        self.assertEqual(set("1", "2", "3"), {1, 2, 3})
+        prime_numbers = [1, 2, 3]
+        one_set = set(prime_numbers)
+        self.assertEqual(one_set, {1, 2, 3})
         self.assertEqual(__, set())
 
     def test_dictionaries_and_sets_use_same_curly_braces(self):
