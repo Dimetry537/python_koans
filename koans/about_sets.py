@@ -15,23 +15,25 @@ class AboutSets(Koan):
         prime_numbers = [1, 2, 3]
         one_set = set(prime_numbers)
         self.assertEqual(one_set, {1, 2, 3})
-        self.assertEqual(__, set())
+        second_set = set()
+        self.assertEqual(second_set, set())
 
     def test_dictionaries_and_sets_use_same_curly_braces(self):
         # Note: Literal sets using braces were introduced in python 3.
         #       They were also backported to python 2.7.
 
-        self.assertEqual(__, {1, 2, 3}.__class__)
-        self.assertEqual(__, {'one': 1, 'two': 2}.__class__)
+        self.assertEqual(set, {1, 2, 3}.__class__)
+        self.assertEqual(dict, {'one': 1, 'two': 2}.__class__)
 
-        self.assertEqual(__, {}.__class__)
+        self.assertEqual(dict, {}.__class__)
 
     def test_creating_sets_using_strings(self):
-        self.assertEqual(__, {'12345'})
-        self.assertEqual(__, set('12345'))
+        string_numbers = ['12345']
+        self.assertEqual(set(string_numbers), {'12345'})
+        self.assertEqual({'1', '2', '3', '4', '5'}, set('12345'))
 
     def test_convert_the_set_into_a_list_to_sort_it(self):
-        self.assertEqual(__, sorted(set('12345')))
+        self.assertEqual(['1', '2', '3', '4', '5'], sorted(set('12345')))
 
     # ------------------------------------------------------------------
 
@@ -39,19 +41,19 @@ class AboutSets(Koan):
         scotsmen = {'MacLeod', 'Wallace', 'Willie'}
         warriors = {'MacLeod', 'Wallace', 'Leonidas'}
 
-        self.assertEqual(__, scotsmen - warriors)
-        self.assertEqual(__, scotsmen | warriors)
-        self.assertEqual(__, scotsmen & warriors)
-        self.assertEqual(__, scotsmen ^ warriors)
+        self.assertEqual({'Willie'}, scotsmen - warriors)
+        self.assertEqual({'MacLeod', 'Leonidas', 'Wallace', 'Willie'}, scotsmen | warriors)
+        self.assertEqual({'MacLeod', 'Wallace'}, scotsmen & warriors)
+        self.assertEqual({'Leonidas', 'Willie'}, scotsmen ^ warriors)
 
     # ------------------------------------------------------------------
 
     def test_we_can_query_set_membership(self):
-        self.assertEqual(__, 127 in {127, 0, 0, 1} )
-        self.assertEqual(__, 'cow' not in set('apocalypse now') )
+        self.assertEqual(True, 127 in {127, 0, 0, 1} )
+        self.assertEqual(True, 'cow' not in set('apocalypse now') )
 
     def test_we_can_compare_subsets(self):
-        self.assertEqual(__, set('cake') <= set('cherry cake'))
-        self.assertEqual(__, set('cake').issubset(set('cherry cake')) )
+        self.assertEqual(True, set('cake') <= set('cherry cake'))
+        self.assertEqual(True, set('cake').issubset(set('cherry cake')) )
 
-        self.assertEqual(__, set('cake') > set('pie'))
+        self.assertEqual(False, set('cake') > set('pie'))
