@@ -8,7 +8,7 @@ from .triangle import *
 
 class AboutTriangleProject(Koan):
     def test_equilateral_triangles_have_equal_sides(self):
-        self.assertEqual(None, triangle(2, 2, 2))
+        self.assertEqual(triangle, triangle(2, 2, 2))
         self.assertEqual(None, triangle(10, 10, 10))
 
     def test_isosceles_triangles_have_exactly_two_sides_equal(self):
