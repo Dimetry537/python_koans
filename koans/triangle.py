@@ -17,16 +17,21 @@
 #   about_triangle_project_2.py
 #
 def triangle(a, b, c):
+    sides = sorted([a, b, c])
+    unique_sides = sorted(set(sides))
+    
+    if unique_sides[0] <= 0 : raise TriangleError('Sides can not be 0 or less')
+    if sides[2] >= sides[0] + sides[1]: raise TriangleError("sum of 2 sides cannot be greater thanremainig side")
+    
     if a == b and b == c:
         return 'equilateral'
     elif a == b or b == c or c == a:
         return 'isosceles'
     else:
-        return 'scalene'
+        return 'scalene1'
     # DELETE 'PASS' AND WRITE THIS CODE
     
 
 # Error class used in part 2.  No need to change this code.
 class TriangleError(Exception):
     pass
-#    raise AssertionError
