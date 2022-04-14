@@ -25,8 +25,8 @@ def triangle(a, b, c):
 
     if a <= 0 or b <= 0 or c <= 0:
         raise TriangleError('Sides can not be 0 or less')
-    k = a + b
-    if c >= k:
+    side = sorted([a, b, c])
+    if side[2] >= side[0] + side[1]:
         raise TriangleError("sum of 2 sides cannot be greater thanremainig side")
     
     
