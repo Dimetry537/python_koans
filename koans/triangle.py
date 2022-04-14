@@ -23,9 +23,12 @@ def triangle(a, b, c):
 #    if unique_sides[0] <= 0 : raise TriangleError('Sides can not be 0 or less')
 #    if sides[2] >= sides[0] + sides[1]: raise TriangleError("sum of 2 sides cannot be greater thanremainig side")
 
-    if a <= 0 or b <= 0 or c <= 0: raise TriangleError('Sides can not be 0 or less')
+    if a <= 0 or b <= 0 or c <= 0:
+        raise TriangleError('Sides can not be 0 or less')
     k = a + b
-    if c >= k: raise TriangleError("sum of 2 sides cannot be greater thanremainig side")
+    if c >= k:
+        raise TriangleError("sum of 2 sides cannot be greater thanremainig side")
+    
     
     if a == b and b == c:
         return 'equilateral'
