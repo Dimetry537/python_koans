@@ -34,10 +34,7 @@ import random
 # Your goal is to write the score method.
 
 def score(dice):
-    dice = random.randint(1, 6)
-    for dice in range(1, 6):
-        return dice.list()
-        print(score(dice))
+    pass
     # You need to write this method
 
 class AboutScoringProject(Koan):
