@@ -55,14 +55,7 @@ def score(dice):
             score += 50 * tallies[k]
         
     return score
-#    dice = []
-
-#    for i in range(5):
-#        i = random.randint(1, 6)
-#        dice.append(i)
-#    print(dice)
     
-
     # You need to write this method
 
 class AboutScoringProject(Koan):
